@@ -8,8 +8,11 @@ const config = new Configstore('google-translate-api');
 let browser;
 
 test.before(async () => {
-    config.clear();
     browser = await puppeteer.launch();
+});
+
+test.beforeEach(() => {
+    config.clear();
 });
 
 test.after(async () => {
