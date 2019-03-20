@@ -31,12 +31,11 @@ test('check if what we generate equals to what translate.google.com generates', 
 });
 
 test('support translate.google.cn via opts.tld', async t => {
-    config.clear();
-    const token = await getToken('hi', {tld: 'cn'});
+    const token = await getToken('hello', {tld: 'cn'});
     const page = await browser.newPage();
     await page.goto('https://translate.google.cn', {timeout: 10000, waitUntil: 'networkidle2'});
     const pRequest = page.waitForRequest(request => request.url().indexOf('tk=') > 0);
-    await page.type('#source', 'hi');
+    await page.type('#source', 'hello');
     const request = await pRequest;
     const realToken = request.url().match(/tk=(\d+\.\d+)/i)[1];
     t.is(token.value, realToken);
