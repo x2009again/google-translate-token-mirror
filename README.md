@@ -11,7 +11,7 @@ This package is the [result](https://github.com/vitalets/google-translate-token/
 
 ## How it works
 
-The token is based on a seed which is updated once per hour and on the text that will be translated. Both are combined – by some strange math – in order to generate a final token (e.g. `820594.703830`) which is used by the API to validade the request. 
+The token is based on a seed which is updated once per hour and on the text that will be translated. Both are combined – by some strange math – in order to generate a final token (e.g. `820594.703830`) which is used by the API to validate the request. 
 
 
 ## Install
