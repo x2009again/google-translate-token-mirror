@@ -31,7 +31,6 @@ test('check if what we generate equals to what translate.google.com generates', 
 });
 
 test('support translate.google.cn via opts.tld', async t => {
-    config.clear();
     const token = await getToken('hi', {tld: 'cn'});
     const page = await browser.newPage();
     await page.goto('https://translate.google.cn', {timeout: 10000, waitUntil: 'networkidle2'});
