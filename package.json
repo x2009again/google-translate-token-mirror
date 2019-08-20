@@ -6,6 +6,12 @@
   "scripts": {
     "test": "xo && ava --serial"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "xo",
+      "pre-push": "npm test"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vitalets/google-translate-token.git"
@@ -37,6 +43,7 @@
   },
   "devDependencies": {
     "ava": "^0.15.2",
+    "husky": "^3.0.4",
     "puppeteer": "^1.11.0",
     "xo": "^0.16.0"
   },
