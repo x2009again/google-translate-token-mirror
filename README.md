@@ -1,7 +1,7 @@
 # google-translate-token 
 [![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/sindresorhus/xo) 
 
-A package that generates the necessary token to use the [**Google Translate API for free** :dollar::no_entry_sign:](https://github.com/matheuss/google-translate-api)
+A package that generates the necessary token to use the [**Google Translate API for free** :dollar::no_entry_sign:](https://github.com/vitalets/google-translate-api)
 
 ## Why
 
@@ -32,3 +32,7 @@ token.get('Hello').then(console.log);
 ## Related
 
 - [`@vitalets/google-translate-api`](https://github.com/vitalets/google-translate-api) – A **free** and **unlimited** API for Google Translate :dollar::no_entry_sign:
+
+## License
+
+MIT © [Matheus Fernandes](http://matheus.top), forked and maintained by [Vitaliy Potapov](https://github.com/vitalets).
