@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/vitalets/google-translate-token#readme",
   "dependencies": {
-    "configstore": "^2.0.0",
+    "configstore": "^5.0.1",
     "got": "^6.3.0"
   },
   "devDependencies": {
