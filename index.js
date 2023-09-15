@@ -49,20 +49,20 @@ function sM(a) {
 }
 
 var yr = null;
-var wr = function(a) {
-    return function() {
+var wr = function (a) {
+    return function () {
         return a
     }
 }
-    , xr = function(a, b) {
-    for (var c = 0; c < b.length - 2; c += 3) {
-        var d = b.charAt(c + 2)
-            , d = "a" <= d ? d.charCodeAt(0) - 87 : Number(d)
-            , d = "+" == b.charAt(c + 1) ? a >>> d : a << d;
-        a = "+" == b.charAt(c) ? a + d & 4294967295 : a ^ d
-    }
-    return a
-};
+    , xr = function (a, b) {
+        for (var c = 0; c < b.length - 2; c += 3) {
+            var d = b.charAt(c + 2)
+                , d = "a" <= d ? d.charCodeAt(0) - 87 : Number(d)
+                , d = "+" == b.charAt(c + 1) ? a >>> d : a << d;
+            a = "+" == b.charAt(c) ? a + d & 4294967295 : a ^ d
+        }
+        return a
+    };
 
 // END
 /* eslint-enable */
@@ -74,14 +74,18 @@ var window = {
 };
 
 function updateTKK(opts) {
-    opts = opts || {tld: 'com'};
+    opts = opts || { tld: 'com', mirror: '' };
     return new Promise(function (resolve, reject) {
         var now = Math.floor(Date.now() / 3600000);
 
         if (Number(window.TKK.split('.')[0]) === now) {
             resolve();
         } else {
-            got('https://translate.google.' + opts.tld).then(function (res) {
+            var url = 'https://translate.google.' + opts.tld;
+            if (opts.mirror !== '') {
+                url = opts.mirror;
+            }
+            got(url).then(function (res) {
                 var matches = res.body.match(/tkk:\s?'(.+?)'/i);
 
                 if (matches) {
@@ -109,7 +113,7 @@ function get(text, opts) {
     return updateTKK(opts).then(function () {
         var tk = sM(text);
         tk = tk.replace('&tk=', '');
-        return {name: 'tk', value: tk};
+        return { name: 'tk', value: tk };
     }).catch(function (err) {
         throw err;
     });
