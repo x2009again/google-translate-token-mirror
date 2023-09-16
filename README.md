@@ -17,13 +17,13 @@ The token is based on a seed which is updated once per hour and on the text that
 ## Install
 
 ```
-npm install @vitalets/google-translate-token
+npm install google-translate-token-with-mirror
 ```
 
 ## Usage
 
 ``` js
-const token = require('@vitalets/google-translate-token');
+const token = require('google-translate-token-with-mirror');
 
 token.get('Hello').then(console.log);
 //=> { name: 'tk', value: '159402.284291' }

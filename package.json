@@ -1,6 +1,6 @@
 {
-  "name": "@vitalets/google-translate-token",
-  "version": "1.2.0",
+  "name": "google-translate-token-with-mirror",
+  "version": "1.3.1",
   "description": "A package that generates the necessary token to use the Google Translate API for free",
   "main": "index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vitalets/google-translate-token.git"
+    "url": "git+https://github.com/x2009again/google-translate-token-mirror.git"
   },
   "keywords": [
     "translate",
@@ -38,9 +38,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vitalets/google-translate-token/issues"
+    "url": "https://github.com/x2009again/google-translate-token-mirror/issues"
   },
-  "homepage": "https://github.com/vitalets/google-translate-token#readme",
+  "homepage": "https://github.com/x2009again/google-translate-token-mirror#readme",
   "dependencies": {
     "configstore": "^5.0.1",
     "got": "^6.3.0"
